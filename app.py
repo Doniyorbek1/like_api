@@ -22,9 +22,6 @@ def addImage():
         likeDB.add_image(image_id, message_id)
         print(f'Image id: {image_id} Message id: {message_id}')
 
-    return {}
-        
-
 # Run the app
 if __name__ == "__main__":
     app.run(debug=True)
