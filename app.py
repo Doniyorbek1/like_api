@@ -30,4 +30,3 @@ def all_like_dislike():
 # Run the app
 if __name__ == "__main__":
     app.run(debug=True)
-
