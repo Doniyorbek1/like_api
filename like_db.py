@@ -35,11 +35,13 @@ class LikeDB:
         likes = 0
         dislike = 0
         for user in self.users:
-            if user[image_id]['like']:
-                likes += 1
-            else:
-                dislike += 1
-            
+            if user.get(image_id):
+                if user[image_id]['like']:
+                    likes += 1
+                    
+                else:
+                    dislike += 1
+                
         return likes, dislike
 
  
@@ -97,9 +99,11 @@ class LikeDB:
         self.users.insert(user_doc)
 
 
-# db = LikeDB('like_db.json')
+db = LikeDB('like_db.json')
 
-# db.add_like('user1', 'img1')
+# db.add_like('2', 'img1')
 # db.add_like('3', 'img2')
 # db.add_dislike('4', 'img2')
-# db.add_image('img1', 'msg1')
+# db.add_image('34', 'msg1')
+
+# print(db.get_likes_dislike("img2"))
