@@ -38,6 +38,7 @@ def addLike():
     img_id = data["img_id"]
     print(data)
     likeDB.add_like(user_id, img_id)
+    return {"status":200}
 
 if __name__ == "__main__":
     app.run(debug=True)
