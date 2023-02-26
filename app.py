@@ -21,7 +21,7 @@ def addImage():
         message_id = data["message_id"]
         likeDB.add_image(image_id, message_id)
         print(f'Image id: {image_id} Message id: {message_id}')
-
+    return {"status":200}
 
 
 @app.route('/api/all-like-dislike/<image>', methods=['GET'])
@@ -29,5 +29,15 @@ def all_like_dislike(image):
     like, dislike = LikeDB.get_likes_dislike(image)
     return like, dislike
 # Run the app
+
+@app.route('/add-like', methods = ['POST'])
+def addLike():
+    data  = request.get_json(force=True)
+    print(data)
+    user_id = data["user_id"]
+    img_id = data["img_id"]
+    print(data)
+    likeDB.add_like(user_id, img_id)
+
 if __name__ == "__main__":
     app.run(debug=True)
