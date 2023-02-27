@@ -40,5 +40,17 @@ def addLike():
     likeDB.add_like(user_id, img_id)
     return {"status":200}
 
+@app.route("/add-dislike", methods = ['POST'])
+def disLike():
+    data = request.get_json(force=True)
+    print(data)
+    user_id = data["user_id"]
+    img_id = data["img_id"]
+    likeDB.add_dislike(user_id, img_id)
+    return {"status":200}
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
