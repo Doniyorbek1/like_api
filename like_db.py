@@ -99,12 +99,13 @@ class LikeDB:
         self.users.insert(user_doc)
 
 
-# db = LikeDB('like_db.json')
+db = LikeDB('like_db.json')
 
-# db.add_like('2', 'img1')
-# db.add_like('3', 'img2')
-# db.add_like('3', '34')
-# db.add_dislike('4', 'img2')
-# db.add_image('34', '1413')
 
-# print(db.get_likes_dislike("img2"))
+db.add_dislike('2', '34')
+db.add_dislike('3', '34')
+db.add_like('3', '24')
+db.add_dislike('4', '34')
+db.add_image('34', '1413')
+
+print(db.get_likes_dislike("34"))

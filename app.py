@@ -24,10 +24,12 @@ def addImage():
     return {"status":200}
 
 
-@app.route('/api/all-like-dislike/<image>', methods=['GET'])
-def all_like_dislike(image):
-    like, dislike = LikeDB.get_likes_dislike(image)
-    return like, dislike
+# @app.route('/api/all-like-dislike/<image_id>', methods=['GET'])
+# def all_like_dislike():
+#     image_id = likeDB['message_id']["image_id"]
+#     print(image_id)
+#     like, dislike = LikeDB.get_likes_dislike(image_id)
+#     return like, dislike
 # Run the app
 
 @app.route('/add-like', methods = ['POST'])
